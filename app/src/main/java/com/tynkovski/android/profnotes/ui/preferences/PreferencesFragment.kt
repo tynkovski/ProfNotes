@@ -19,14 +19,14 @@ class PreferencesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
+        val preferencesViewModel =
             ViewModelProvider(this).get(PreferencesViewModel::class.java)
 
         _binding = FragmentPreferencesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textPreferences
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        preferencesViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
