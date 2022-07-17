@@ -3,8 +3,6 @@ package com.tynkovski.android.profnotes
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tynkovski.android.profnotes.databinding.ActivityMainBinding
@@ -19,17 +17,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navView: BottomNavigationView = binding.navView
+        val navView: BottomNavigationView = binding.bottomNavigation
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_preferences
-            )
-        )
-
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        val navController = findNavController(R.id.navigationHost)
         navView.setupWithNavController(navController)
     }
 }
