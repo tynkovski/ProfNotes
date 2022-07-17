@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:app="http://schemas.android.com/apk/res-auto">
+    <style name="ProfsoftNavigation" parent="Widget.Design.BottomNavigationView">
+        <item name="android:background">
+            @color/gray_3d
+        </item>
+        <item name="labelVisibilityMode">
+            unlabeled
+        </item>
+        <item name="itemTextColor">
+            @color/yellow
+        </item>
+    </style>
+</resources>
