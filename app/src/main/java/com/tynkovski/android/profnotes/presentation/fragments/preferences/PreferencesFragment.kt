@@ -18,8 +18,7 @@ class PreferencesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val preferencesViewModel =
-            ViewModelProvider(this).get(PreferencesViewModel::class.java)
+        val preferencesViewModel = ViewModelProvider(this).get(PreferencesViewModel::class.java)
         val root: View = binding.root
 
         val textView: TextView = binding.textPreferences
