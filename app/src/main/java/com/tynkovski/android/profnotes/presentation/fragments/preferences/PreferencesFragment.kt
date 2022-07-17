@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.tynkovski.android.profnotes.databinding.FragmentPreferencesBinding
 
 class PreferencesFragment : Fragment() {
-
-    private var _binding: FragmentPreferencesBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding(FragmentPreferencesBinding::bind)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,8 +20,6 @@ class PreferencesFragment : Fragment() {
     ): View {
         val preferencesViewModel =
             ViewModelProvider(this).get(PreferencesViewModel::class.java)
-
-        _binding = FragmentPreferencesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textPreferences
@@ -34,6 +31,5 @@ class PreferencesFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
     }
 }
