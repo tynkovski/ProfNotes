@@ -1,9 +1,10 @@
-package com.tynkovski.android.profnotes
+package com.tynkovski.android.profnotes.presentation
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.tynkovski.android.profnotes.presentation.main.MainActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {

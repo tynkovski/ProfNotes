@@ -1,9 +1,10 @@
-package com.tynkovski.android.profnotes
+package com.tynkovski.android.profnotes.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.tynkovski.android.profnotes.R
 import com.tynkovski.android.profnotes.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

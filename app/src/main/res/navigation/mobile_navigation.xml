@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.tynkovski.android.profnotes.ui.home.HomeFragment"
+        android:name="com.tynkovski.android.profnotes.presentation.fragments.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_preferences"
-        android:name="com.tynkovski.android.profnotes.ui.preferences.PreferencesFragment"
+        android:name="com.tynkovski.android.profnotes.presentation.fragments.preferences.PreferencesFragment"
         android:label="@string/title_preferences"
         tools:layout="@layout/fragment_preferences" />
 </navigation>
