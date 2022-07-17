@@ -8,13 +8,13 @@ import com.tynkovski.android.profnotes.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private val navigationView get() = binding.bottomNavigation
+    private val bottomNavigation get() = binding.bottomNavigation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        navigationView.setupWithNavController(
+        bottomNavigation.setupWithNavController(
             findNavController(R.id.navigationHost)
         )
     }
