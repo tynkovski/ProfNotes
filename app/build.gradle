@@ -50,7 +50,11 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
 
     // Navigation
-    def navigation_version = "2.5.0"
-    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    def navigation_ver = "2.5.0"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_ver"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_ver"
+
+    // View binding
+    def viewbinding_ver = "1.5.6"
+    implementation "com.github.kirich1409:viewbindingpropertydelegate-noreflection:$viewbinding_ver"
 }
