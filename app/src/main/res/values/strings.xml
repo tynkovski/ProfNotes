@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_preferences">Preferences</string>
+    <string name="title_login">PROFNOTES</string>
+    <string name="login">Вход</string>
+    <string name="appeal_login">Пожалуйста, войдите для продолжения</string>
+    <string name="hint_login">Номер телефона или логин</string>
+    <string name="hint_password">Пароль</string>
+    <string name="registration_appeal">Или войдите без аккаунта, если не хотите пользоваться всеми возможностями</string>
+    <string name="enter">Войти</string>
+    <string name="forgot_password">Не помните свой пароль? Восстановите пароль</string>
 </resources>
