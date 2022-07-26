@@ -13,57 +13,37 @@
         </item>
     </style>
 
-    <style name="Login">
-        <item name="android:textStyle">
-            bold
-        </item>
-        <item name="android:textColor">
-            @color/white
-        </item>
+    <style name="LogoTitle">
+        <item name="android:textSize">36sp</item>
+        <item name="fontFamily">@font/circe_extra_bold</item>
     </style>
 
-    <style name="Login.Login">
-        <item name="android:textSize">
-            24sp
-        </item>
+    <style name="TextH1">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/circe_extra_bold</item>
     </style>
 
-    <style name="Login.Title">
-        <item name="android:textSize">
-            32sp
-        </item>
+    <style name="TextH1.Large">
+        <item name="android:textSize">24sp</item>
     </style>
 
-    <style name="Login.Appeal">
-        <item name="android:textSize">
-            12sp
-        </item>
-        <item name="android:textColor">
-            @color/gray_94
-        </item>
+    <style name="TextH2">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/circe_bold</item>
     </style>
 
-    <style name="Login.EditText">
-        <item name="android:textSize">
-            12sp
-        </item>
-        <item name="android:paddingStart">
-            12dp
-        </item>
-        <item name="android:paddingEnd">
-            12dp
-        </item>
+    <style name="TextH3">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/circe_bold</item>
     </style>
 
-    <style name="Login.Button">
-        <item name="android:textSize">
-            16sp
-        </item>
-        <item name="android:textColor">
-            @color/black
-        </item>
-        <item name="cornerRadius">
-            8dp
-        </item>
+    <style name="TextH4">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/circe_bold</item>
+    </style>
+
+    <style name="TextH5">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/circe_bold</item>
     </style>
 </resources>

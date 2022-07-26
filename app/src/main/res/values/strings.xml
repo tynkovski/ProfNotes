@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Prof Notes</string>
+    <string name="app_name">ProfNotes</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_preferences">Preferences</string>
-    <string name="title_login">PROFNOTES</string>
+    <string name="title_login">Login</string>
     <string name="login">Вход</string>
     <string name="appeal_login">Пожалуйста, войдите для продолжения</string>
     <string name="hint_login">Номер телефона или логин</string>
