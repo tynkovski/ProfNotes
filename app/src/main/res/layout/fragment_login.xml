@@ -52,26 +52,20 @@
 
             <EditText
                 android:id="@+id/edLogin"
-                style="@style/TextH3"
+                style="@style/ProfEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/bg_login_edit_text"
-                android:hint="@string/hint_login"
-                android:padding="12dp"
-                android:textCursorDrawable="@drawable/edit_text_cursor" />
+                android:hint="@string/hint_login" />
 
             <EditText
                 android:id="@+id/edPassword"
-                style="@style/TextH3"
+                style="@style/ProfEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/bg_login_edit_text"
                 android:hint="@string/hint_password"
-                android:inputType="textPassword"
-                android:padding="12dp"
-                android:textCursorDrawable="@drawable/edit_text_cursor" />
+                android:inputType="textPassword" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvRegistrationAppeal"
@@ -89,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="32dp"
+            android:background="@color/black"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -106,11 +101,11 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogin"
-                style="@style/TextH1"
+                style="@style/ProfButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_button"
-                android:enabled="true"
+                android:enabled="false"
                 android:text="@string/enter" />
         </LinearLayout>
 
