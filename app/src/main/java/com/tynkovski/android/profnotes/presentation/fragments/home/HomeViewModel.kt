@@ -21,7 +21,7 @@ class HomeViewModel : ViewModel() {
 
         val day = now[Calendar.DAY_OF_MONTH]
         val dayOfWeek = format.weekdays[Calendar.getInstance()[Calendar.DAY_OF_WEEK]].replaceFirstChar {
-            if (it.isLowerCase()) it.titlecase( Locale.getDefault()) else it.toString()
+            if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
         }
         val month = format.months[Calendar.getInstance()[Calendar.MONTH]]
 
