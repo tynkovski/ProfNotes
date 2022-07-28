@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,93 +13,101 @@
         android:paddingHorizontal="20dp">
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/titleTextView"
-            style="@style/Login.Title"
+            android:id="@+id/tvLogo"
+            style="@style/LogoTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="142dp"
-            android:text="@string/title_login"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@+id/containerLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/loginTextView"
-            style="@style/Login.Login"
+        <LinearLayout
+            android:id="@+id/containerLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="122dp"
-            android:text="@string/login"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/appealTextView"
-            style="@style/Login.Appeal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/appeal_login"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
-
-        <EditText
-            android:id="@+id/loginEditText"
-            style="@style/Login.EditText"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginVertical="12dp"
-            android:background="@drawable/rounded_corners"
-            android:hint="@string/hint_login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appealTextView" />
-
-        <EditText
-            android:id="@+id/passwordEditText"
-            style="@style/Login.EditText"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginVertical="12dp"
-            android:background="@drawable/rounded_corners"
-            android:hint="@string/hint_password"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginEditText" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/registrationAppealTextView"
-            style="@style/Login.Appeal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/registration_appeal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/recoveryAppealTextView"
-            style="@style/Login.Appeal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/forgot_password"
-            app:layout_constraintBottom_toTopOf="@+id/materialButton"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton"
-            style="@style/Login.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:text="@string/enter"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvLogin"
+                style="@style/TextH1.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAppeal"
+                style="@style/TextH5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/appeal_login"
+                android:textColor="@color/lightestGray" />
+
+            <EditText
+                android:id="@+id/edLogin"
+                style="@style/ProfEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="@string/hint_login" />
+
+            <EditText
+                android:id="@+id/edPassword"
+                style="@style/ProfEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvRegistrationAppeal"
+                style="@style/TextH5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/registration_appeal"
+                android:textColor="@color/lightestGray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/black"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            tools:layout_editor_absoluteX="20dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvRecoveryAppeal"
+                style="@style/TextH5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/forgot_password"
+                android:textColor="@color/lightestGray" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                style="@style/ProfButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button"
+                android:enabled="false"
+                android:text="@string/enter" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

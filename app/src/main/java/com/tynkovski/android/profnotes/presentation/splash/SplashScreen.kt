@@ -1,4 +1,4 @@
-package com.tynkovski.android.profnotes.presentation
+package com.tynkovski.android.profnotes.presentation.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent

@@ -5,6 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <fragment
         android:id="@+id/navigationHost"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -14,34 +23,38 @@
         app:navGraph="@navigation/mobile_navigation" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBarTag"
+        android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_margin="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@android:color/transparent"
+        android:visibility="gone"
         app:contentInsetStart="0dp"
-        app:fabCradleRoundedCornerRadius="0dp">
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleVerticalOffset="1dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigation"
-            style="@style/ProfsoftNavigation"
+            android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:foregroundTint="@color/black"
-            app:itemIconTint="@color/button_navigation_color"
-            app:menu="@menu/bottom_nav_menu">
-
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/bg_bottom_bar"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_nav_menu" />
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabTag"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_profsoft_plus"
-        app:layout_anchor="@id/bottomAppBarTag" />
+        android:backgroundTint="#007AFF"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_plus"
+        android:visibility="gone"
+        app:layout_anchor="@id/bottomAppBar" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
