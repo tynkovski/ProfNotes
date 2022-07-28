@@ -185,10 +185,10 @@
                     app:layout_constraintTop_toTopOf="@+id/tvLocalTasks" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_marginTop="16dp"
                     android:id="@+id/rvLocalTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintTop_toBottomOf="@+id/tvLocalTasks"
                     tools:itemCount="1"
                     tools:listitem="@layout/item_note" />
@@ -197,4 +197,5 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.core.widget.NestedScrollView>
