@@ -145,58 +145,55 @@
                     android:layout_marginTop="12dp" />
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/groupLocalTasks"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:id="@+id/groupLocalTasksInner"
-                    android:layout_width="match_parent"
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLocalTasks"
+                    style="@style/TextH1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:text="@string/my_tasks"
+                    android:textAllCaps="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvLocalTasks"
-                        style="@style/TextH1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/my_tasks"
-                        android:textAllCaps="true" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvLocalTasksCount"
+                    style="@style/TextH1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/green"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLocalTasks"
+                    app:layout_constraintStart_toEndOf="@id/tvLocalTasks"
+                    app:layout_constraintTop_toTopOf="@+id/tvLocalTasks"
+                    tools:text="1" />
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tvLocalTasksCount"
-                        style="@style/TextH1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:textColor="@color/green"
-                        tools:text="1" />
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/tvAllTasks"
-                            style="@style/TextH4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end|center_vertical"
-                            android:text="@string/all_tasks"
-                            android:textColor="@color/gray" />
-                    </FrameLayout>
-                </LinearLayout>
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvAllTasks"
+                    style="@style/TextH4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:text="@string/all_tasks"
+                    android:textColor="@color/gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLocalTasks"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvLocalTasks" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="16dp"
                     android:id="@+id/rvLocalTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLocalTasks"
                     tools:itemCount="1"
                     tools:listitem="@layout/item_note" />
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
