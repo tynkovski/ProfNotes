@@ -11,4 +11,13 @@
     <string name="registration_appeal">Или войдите без аккаунта, если не хотите пользоваться всеми возможностями</string>
     <string name="enter">Войти</string>
     <string name="forgot_password">Не помните свой пароль? Восстановите пароль</string>
+    <string name="morning_greetings">Доброе утро,\n%1$s</string>
+    <string name="evening_greetings">Добрый вечер,\n%1$s</string>
+    <string name="night_greetings">Доброй ночи,\n%1$s</string>
+    <string name="day_greetings">Добрый день,\n%1$s</string>
+    <string name="today">Сегодня</string>
+    <string name="news">Новости</string>
+    <string name="new_notes">Новые заметки %1$s</string>
+    <string name="my_tasks">Мои задачи %1$s</string>
+    <string name="all_tasks">Все задачи</string>
 </resources>

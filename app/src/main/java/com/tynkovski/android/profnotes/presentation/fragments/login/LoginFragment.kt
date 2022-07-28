@@ -8,8 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation.findNavController
 import com.tynkovski.android.profnotes.R
-import com.tynkovski.android.profnotes.core.show
-import com.tynkovski.android.profnotes.core.spanString
+import com.tynkovski.android.profnotes.core.colorString
 import com.tynkovski.android.profnotes.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -32,26 +31,17 @@ class LoginFragment : Fragment() {
 
         with(binding) {
             tvRegistrationAppeal.apply {
-                text = text.spanString(
-                    startIndex = 4,
-                    endIndex = 24,
-                    color = requireContext().getColor(R.color.green)
-                )
+                text = text.colorString(4, 24, color = requireContext().getColor(R.color.green))
             }
 
             tvRecoveryAppeal.apply {
-                text = text.spanString(
-                    startIndex = 24,
-                    endIndex = 43,
-                    color = requireContext().getColor(R.color.yellow)
-                )
+                text = text.colorString(24, 43, requireContext().getColor(R.color.yellow))
             }
 
             btnLogin.apply {
                 isEnabled = true
                 setOnClickListener {
-                    findNavController(binding.root)
-                        .navigate(R.id.action_navigation_login_to_navigation_home)
+                    findNavController(binding.root).navigate(R.id.action_navigation_login_to_navigation_home)
                 }
             }
         }
