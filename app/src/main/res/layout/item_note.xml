@@ -20,10 +20,10 @@
             style="@style/TextH2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/blue"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Новое" />
+            tools:text="Тип заметки"
+            tools:textColor="@color/blue" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/materialDivider"
@@ -40,35 +40,38 @@
             android:layout_width="4dp"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
-            app:dividerColor="@color/blue"
             app:layout_constraintBottom_toBottomOf="@+id/tvDescriptionNote"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider"
+            tools:dividerColor="@color/blue" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvTitleNote"
             style="@style/TextH2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginHorizontal="12dp"
             android:ellipsize="end"
             android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/ibtnMore"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@+id/materialDividerVertical"
             app:layout_constraintTop_toBottomOf="@+id/materialDivider"
             app:layout_constraintTop_toTopOf="@id/materialDividerVertical"
-            tools:text="Название" />
+            tools:text="Очень очень очень очень очень очень длинное название" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvDescriptionNote"
             style="@style/TextH5"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
             android:textColor="@color/gray"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitleNote"
             app:layout_constraintStart_toStartOf="@+id/tvTitleNote"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleNote"
-            tools:text="Описание" />
+            tools:text="Очень очень очень очень очень очень очень очень очень очень очень  чень очень очень очень очень очень очень длинное описание" />
 
         <ImageButton
             android:id="@+id/ibtnMore"
@@ -76,7 +79,8 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_more_vert"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTitleNote"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider"
             app:layout_constraintTop_toTopOf="@+id/tvTitleNote" />
 
         <ImageView
