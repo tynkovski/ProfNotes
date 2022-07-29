@@ -41,8 +41,10 @@ class NoteViewHolder(
                     R.color.yellow to R.string.delayed_note,
                     R.color.blue to R.string.new_note,
                     R.color.green to R.string.in_progress_note,
-                ).also {
-                    text = resources.getString(it[colorAccent] ?: R.color.white)
+                ).also { colors ->
+                    text = colors[colorAccent]?.let { color ->
+                        resources.getString(color)
+                    }
                 }
                 setTextColor(resources.getColor(colorAccent, null))
             }
@@ -64,8 +66,32 @@ class NoteViewHolder(
             }
 
             tvTime.apply {
+                var hoursAndMinutes = ""
+
                 Calendar.Builder().setInstant(note.timeToComplete).build().also { timeToComplete ->
-                    text = SimpleDateFormat("HH:mm").format(timeToComplete.time)
+                    hoursAndMinutes = SimpleDateFormat("HH:mm").format(timeToComplete.time)
+                }
+
+                text = when(note.replayFlag) {
+                    0 -> "${resources.getString(R.string.until_today)} $hoursAndMinutes"
+                    127 -> "$hoursAndMinutes ${resources.getString(R.string.every_day)}"
+                    else -> {
+                        val stringBuilder = StringBuilder().apply {
+                            sortedMapOf(
+                                1 to R.string.monday_short,
+                                2 to R.string.tuesday_short,
+                                4 to R.string.wednesday_short,
+                                8 to R.string.thursday_short,
+                                16 to R.string.friday_short,
+                                32 to R.string.saturday_short,
+                                64 to R.string.sunday_short,
+                            ).forEach { (day, str) ->
+                                if ((note.replayFlag and day) == day)
+                                    append("${resources.getString(str)} ")
+                            }
+                        }
+                        "$hoursAndMinutes $stringBuilder"
+                    }
                 }
             }
         }

@@ -72,7 +72,7 @@
 
         <ImageButton
             android:id="@+id/ibtnMore"
-            android:layout_width="4dp"
+            android:layout_width="6dp"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_more_vert"

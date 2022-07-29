@@ -26,4 +26,13 @@
     <string name="completed_note">Завершено</string>
     <string name="delayed_note">Отложено</string>
     <string name="change_status">Сменить статус</string>
+    <string name="monday_short">пн</string>
+    <string name="tuesday_short">вт</string>
+    <string name="wednesday_short">ср</string>
+    <string name="thursday_short">чт</string>
+    <string name="friday_short">пт</string>
+    <string name="saturday_short">сб</string>
+    <string name="sunday_short">вс</string>
+    <string name="every_day">ежедневно</string>
+    <string name="until_today">До</string>
 </resources>

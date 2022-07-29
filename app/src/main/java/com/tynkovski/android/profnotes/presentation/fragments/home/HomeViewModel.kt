@@ -22,15 +22,15 @@ class HomeViewModel : ViewModel() {
             ),
             NoteEntity(
                 1, "Андроид", "Изучение андроида",
-                NoteType.InProgress, 43300000L, 1659119481496L, 0
+                NoteType.InProgress, 43300000L, 1659119481496L, 127
             ),
             NoteEntity(
                 2, "Изучение побочного материала", "Изучать чето там",
-                NoteType.Delayed, 43400000L, 1659119481496L, 0
+                NoteType.Delayed, 43400000L, 1659119481496L, 7
             ),
             NoteEntity(
                 3, "Выполнение ДЗ к понедельнику", "Сделать домашнее задание для профсофта",
-                NoteType.Completed, 43400000L, 1659119481496L, 0
+                NoteType.Completed, 43400000L, 1659119481496L, 1
             ),
         )
     }
