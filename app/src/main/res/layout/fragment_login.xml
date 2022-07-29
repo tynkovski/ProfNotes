@@ -56,7 +56,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="@string/hint_login" />
+                android:hint="@string/hint_login"
+                android:scrollHorizontally="true"
+                android:singleLine="true" />
 
             <EditText
                 android:id="@+id/edPassword"
@@ -65,7 +67,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:hint="@string/hint_password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:scrollHorizontally="true"
+                android:singleLine="true" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvRegistrationAppeal"
