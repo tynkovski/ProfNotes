@@ -53,7 +53,11 @@ class HomeFragment : Fragment() {
             rvLocalTasks.apply {
                 layoutManager = LinearLayoutManager(requireContext())
                 adapter = NoteAdapter().apply {
-                    viewModel.notes.value?.let { setItems(it) }
+                    viewModel.notes.observe(viewLifecycleOwner) { notes ->
+                        if (notes.isNotEmpty()) {
+                            setItems(notes)
+                        }
+                    }
                 }
                 addItemDecoration(
                     NoteDecorator(resources.getDimensionPixelOffset(R.dimen.note_margin))
