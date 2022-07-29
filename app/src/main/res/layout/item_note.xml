@@ -55,7 +55,7 @@
             app:layout_constraintStart_toEndOf="@+id/materialDividerVertical"
             app:layout_constraintTop_toBottomOf="@+id/materialDivider"
             app:layout_constraintTop_toTopOf="@id/materialDividerVertical"
-            tools:text="Очень очень очень очень очень очень длинное название" />
+            tools:text="Очень очень очень очень длинное название" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvDescriptionNote"
@@ -68,7 +68,7 @@
             app:layout_constraintEnd_toEndOf="@+id/tvTitleNote"
             app:layout_constraintStart_toStartOf="@+id/tvTitleNote"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleNote"
-            tools:text="Очень очень очень очень очень очень очень очень очень очень очень  чень очень очень очень очень очень очень длинное описание" />
+            tools:text="Очень очень очень очень очень очень очень очень очень очень очень очень очень очень очень длинное описание" />
 
         <ImageButton
             android:id="@+id/ibtnMore"
