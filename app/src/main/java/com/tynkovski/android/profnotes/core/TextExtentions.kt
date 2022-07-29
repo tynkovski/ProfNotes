@@ -16,6 +16,14 @@ fun CharSequence.colorString(startIndex: Int, endIndex: Int, color: Int): Spanna
     return spannable
 }
 
+fun CharSequence.colorString(color: Int): Spannable {
+    val spannable = this.toSpannable()
+    spannable.setSpan(
+        ForegroundColorSpan(color), 0, this.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+    )
+    return spannable
+}
+
 fun CharSequence.underlineString(): Spannable {
     val spannable = this.toSpannable()
     spannable.setSpan(

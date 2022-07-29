@@ -95,10 +95,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
+            android:text="@string/change_status"
             app:layout_constraintBottom_toBottomOf="@+id/ivCalendar"
             app:layout_constraintStart_toEndOf="@+id/ivCalendar"
-            app:layout_constraintTop_toTopOf="@+id/ivCalendar"
-            tools:text="Сменить статус" />
+            app:layout_constraintTop_toTopOf="@+id/ivCalendar" />
 
         <ImageView
             android:id="@+id/ivTime"

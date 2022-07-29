@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.tynkovski.android.profnotes.R
 import com.tynkovski.android.profnotes.core.colorString
 import com.tynkovski.android.profnotes.core.underlineString
 import com.tynkovski.android.profnotes.databinding.FragmentHomeBinding
+import com.tynkovski.android.profnotes.presentation.fragments.home.recyclerview.NoteAdapter
+import com.tynkovski.android.profnotes.presentation.fragments.home.recyclerview.NoteDecorator
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -45,6 +49,16 @@ class HomeFragment : Fragment() {
 
             tvAllTasks.apply {
                 text = text.underlineString()
+            }
+
+            rvLocalTasks.apply {
+                layoutManager = LinearLayoutManager(requireContext())
+                adapter = NoteAdapter().apply {
+                    viewModel.notes.value?.let { setItems(it) }
+                }
+                addItemDecoration(
+                    NoteDecorator(resources.getDimensionPixelOffset(R.dimen.note_margin))
+                )
             }
         }
     }

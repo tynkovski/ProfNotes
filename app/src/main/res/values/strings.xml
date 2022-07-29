@@ -21,4 +21,9 @@
     <string name="my_tasks">Мои задачи</string>
     <string name="all_tasks">Все задачи</string>
     <string name="find_in_notes">Поиск по заметкам</string>
+    <string name="new_note">Новое</string>
+    <string name="in_progress_note">В работе</string>
+    <string name="completed_note">Завершено</string>
+    <string name="delayed_note">Отложено</string>
+    <string name="change_status">Сменить статус</string>
 </resources>
