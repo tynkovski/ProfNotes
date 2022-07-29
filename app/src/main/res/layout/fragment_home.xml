@@ -92,6 +92,7 @@
             android:drawableStart="@drawable/ic_find"
             android:drawablePadding="8dp"
             android:hint="@string/find_in_notes"
+            android:imeOptions="actionSearch"
             android:padding="10dp"
             android:scrollHorizontally="true"
             android:singleLine="true"
