@@ -64,18 +64,4 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         outState.putString(LOGIN_TEXT_KEY, binding.edLogin.text.toString())
         outState.putString(PASSWORD_TEXT_KEY, binding.edPassword.text.toString())
     }
-
-    override fun onStop() {
-        super.onStop()
-
-        with(binding) {
-            edLogin.apply {
-                text.clear()
-            }
-
-            edPassword.apply {
-                text.clear()
-            }
-        }
-    }
 }
