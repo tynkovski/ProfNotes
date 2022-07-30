@@ -26,6 +26,5 @@
     <fragment
         android:id="@+id/navigation_preferences"
         android:name="com.tynkovski.android.profnotes.presentation.fragments.preferences.PreferencesFragment"
-        android:label="@string/title_preferences"
-        tools:layout="@layout/fragment_preferences" />
+        android:label="@string/title_preferences" />
 </navigation>
