@@ -1,64 +1,67 @@
 package com.tynkovski.android.profnotes.presentation.fragments.login
 
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.tynkovski.android.profnotes.R
-import com.tynkovski.android.profnotes.core.show
-import com.tynkovski.android.profnotes.core.spanString
+import com.tynkovski.android.profnotes.core.colorString
 import com.tynkovski.android.profnotes.databinding.FragmentLoginBinding
 
-class LoginFragment : Fragment() {
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
-
-    private val viewModel: LoginViewModel by viewModels()
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        return binding.root
+class LoginFragment : Fragment(R.layout.fragment_login) {
+    companion object {
+        const val LOGIN_TEXT_KEY = "LOGIN_TEXT"
+        const val PASSWORD_TEXT_KEY = "PASSWORD_TEXT"
     }
+
+    private val binding by viewBinding(FragmentLoginBinding::bind)
+    private val viewModel: LoginViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
+            val loginTextWatcher: TextWatcher = object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun afterTextChanged(s: Editable?) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    btnLogin.isEnabled = edLogin.text.toString().isNotEmpty() && edPassword.text.toString().isNotEmpty()
+                }
+            }
+
             tvRegistrationAppeal.apply {
-                text = text.spanString(
-                    startIndex = 4,
-                    endIndex = 24,
-                    color = requireContext().getColor(R.color.green)
-                )
+                text = text.colorString(4, 24, requireContext().getColor(R.color.green))
             }
 
             tvRecoveryAppeal.apply {
-                text = text.spanString(
-                    startIndex = 24,
-                    endIndex = 43,
-                    color = requireContext().getColor(R.color.yellow)
-                )
+                text = text.colorString(24, 43, requireContext().getColor(R.color.yellow))
+            }
+
+            edLogin.apply {
+                addTextChangedListener(loginTextWatcher)
+                setText(savedInstanceState?.getString(LOGIN_TEXT_KEY, ""))
+            }
+
+            edPassword.apply {
+                addTextChangedListener(loginTextWatcher)
+                setText(savedInstanceState?.getString(PASSWORD_TEXT_KEY, ""))
             }
 
             btnLogin.apply {
-                isEnabled = true
                 setOnClickListener {
-                    findNavController(binding.root)
-                        .navigate(R.id.action_navigation_login_to_navigation_home)
+                    findNavController(binding.root).navigate(R.id.action_navigation_login_to_navigation_home)
                 }
             }
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(LOGIN_TEXT_KEY, binding.edLogin.text.toString())
+        outState.putString(PASSWORD_TEXT_KEY, binding.edPassword.text.toString())
     }
 }

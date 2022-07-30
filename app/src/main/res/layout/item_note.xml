@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ProfCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvType"
+            style="@style/TextH2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Тип заметки"
+            tools:textColor="@color/blue" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:dividerColor="@color/lightestGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvType" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDividerVertical"
+            android:layout_width="4dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDescriptionNote"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider"
+            tools:dividerColor="@color/blue" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitleNote"
+            style="@style/TextH2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@+id/ibtnMore"
+            app:layout_constraintStart_toEndOf="@+id/materialDividerVertical"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider"
+            app:layout_constraintTop_toTopOf="@id/materialDividerVertical"
+            tools:text="Очень очень очень очень длинное название" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDescriptionNote"
+            style="@style/TextH5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/gray"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitleNote"
+            app:layout_constraintStart_toStartOf="@+id/tvTitleNote"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleNote"
+            tools:text="Очень очень очень очень очень очень очень очень очень очень очень очень очень очень очень длинное описание" />
+
+        <ImageButton
+            android:id="@+id/ibtnMore"
+            android:layout_width="6dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_more_vert"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTitleNote"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider"
+            app:layout_constraintTop_toTopOf="@+id/tvTitleNote" />
+
+        <ImageView
+            android:id="@+id/ivCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialDividerVertical" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvChangeStatus"
+            style="@style/TextH5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="@string/change_status"
+            app:layout_constraintBottom_toBottomOf="@+id/ivCalendar"
+            app:layout_constraintStart_toEndOf="@+id/ivCalendar"
+            app:layout_constraintTop_toTopOf="@+id/ivCalendar" />
+
+        <ImageView
+            android:id="@+id/ivTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_time"
+            app:layout_constraintBottom_toBottomOf="@+id/ivCalendar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivCalendar"
+            app:layout_constraintTop_toTopOf="@+id/ivCalendar" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTime"
+            style="@style/TextH5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivTime"
+            app:layout_constraintStart_toEndOf="@+id/ivTime"
+            app:layout_constraintTop_toTopOf="@+id/ivTime"
+            tools:text="До 12:00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
