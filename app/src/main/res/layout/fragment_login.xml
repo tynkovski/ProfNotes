@@ -57,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:hint="@string/hint_login"
+                android:imeOptions="flagNoFullscreen"
                 android:scrollHorizontally="true"
                 android:singleLine="true" />
 
@@ -67,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:hint="@string/hint_password"
+                android:imeOptions="flagNoFullscreen"
                 android:inputType="textPassword"
                 android:scrollHorizontally="true"
                 android:singleLine="true" />
