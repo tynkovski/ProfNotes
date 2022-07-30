@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.tynkovski.android.profnotes.R
-import com.tynkovski.android.profnotes.core.colorString
+import com.tynkovski.android.profnotes.core.colorSubString
 import com.tynkovski.android.profnotes.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
@@ -33,12 +33,18 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 }
             }
 
-            tvRegistrationAppeal.apply {
-                text = text.colorString(4, 24, requireContext().getColor(R.color.green))
+            tvRecoveryAppeal.apply {
+                text = text.colorSubString(
+                    requireContext().getString(R.string.forget_recovery),
+                    requireContext().getColor(R.color.yellow)
+                )
             }
 
-            tvRecoveryAppeal.apply {
-                text = text.colorString(24, 43, requireContext().getColor(R.color.yellow))
+            tvRegistrationAppeal.apply {
+                text = text.colorSubString(
+                    requireContext().getString(R.string.sign_in_without_autorization),
+                    requireContext().getColor(R.color.green)
+                )
             }
 
             edLogin.apply {

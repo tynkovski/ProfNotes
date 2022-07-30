@@ -22,8 +22,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         with(binding) {
             tvProfileGreetings.apply {
-                text = getString(viewModel.getCurrentDayStage(), viewModel.profileName.value)
-                    .colorString(0, 12, requireContext().getColor(R.color.gray))
+                getString(viewModel.getCurrentDayStage(), viewModel.profileName.value).also { stage ->
+                    text = stage.colorString(0, stage.indexOf(','), requireContext().getColor(R.color.gray))
+                }
             }
 
             tvTodayDescription.apply {

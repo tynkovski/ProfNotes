@@ -38,4 +38,6 @@
     <string name="enable_notifications">Включить уведомления</string>
     <string name="send_feedback">Обратная связь</string>
     <string name="preferences_report">Сообщите о технических проблемах или предложите новые функции</string>
+    <string name="sign_in_without_autorization">войдите без аккаунта</string>
+    <string name="forget_recovery">Восстановите пароль</string>
 </resources>
