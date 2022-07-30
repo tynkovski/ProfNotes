@@ -13,6 +13,11 @@ import com.tynkovski.android.profnotes.core.colorString
 import com.tynkovski.android.profnotes.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment(R.layout.fragment_login) {
+    companion object {
+        const val LOGIN_TEXT_KEY = "LOGIN_TEXT"
+        const val PASSWORD_TEXT_KEY = "PASSWORD_TEXT"
+    }
+
     private val binding by viewBinding(FragmentLoginBinding::bind)
     private val viewModel: LoginViewModel by viewModels()
 
@@ -29,7 +34,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             }
 
             tvRegistrationAppeal.apply {
-                text = text.colorString(4, 24, color = requireContext().getColor(R.color.green))
+                text = text.colorString(4, 24, requireContext().getColor(R.color.green))
             }
 
             tvRecoveryAppeal.apply {
@@ -38,10 +43,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
             edLogin.apply {
                 addTextChangedListener(loginTextWatcher)
+                setText(savedInstanceState?.getString(LOGIN_TEXT_KEY, ""))
             }
 
             edPassword.apply {
                 addTextChangedListener(loginTextWatcher)
+                setText(savedInstanceState?.getString(PASSWORD_TEXT_KEY, ""))
             }
 
             btnLogin.apply {
@@ -50,6 +57,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 }
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(LOGIN_TEXT_KEY, binding.edLogin.text.toString())
+        outState.putString(PASSWORD_TEXT_KEY, binding.edPassword.text.toString())
     }
 
     override fun onStop() {
