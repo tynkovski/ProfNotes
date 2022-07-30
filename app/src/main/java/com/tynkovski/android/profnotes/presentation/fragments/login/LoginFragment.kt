@@ -1,6 +1,8 @@
 package com.tynkovski.android.profnotes.presentation.fragments.login
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -18,6 +20,14 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
+            val loginTextWatcher: TextWatcher = object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun afterTextChanged(s: Editable?) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    btnLogin.isEnabled = edLogin.text.toString().isNotEmpty() && edPassword.text.toString().isNotEmpty()
+                }
+            }
+
             tvRegistrationAppeal.apply {
                 text = text.colorString(4, 24, color = requireContext().getColor(R.color.green))
             }
@@ -26,11 +36,32 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 text = text.colorString(24, 43, requireContext().getColor(R.color.yellow))
             }
 
+            edLogin.apply {
+                addTextChangedListener(loginTextWatcher)
+            }
+
+            edPassword.apply {
+                addTextChangedListener(loginTextWatcher)
+            }
+
             btnLogin.apply {
-                isEnabled = true
                 setOnClickListener {
                     findNavController(binding.root).navigate(R.id.action_navigation_login_to_navigation_home)
                 }
+            }
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        with(binding) {
+            edLogin.apply {
+                text.clear()
+            }
+
+            edPassword.apply {
+                text.clear()
             }
         }
     }
